@@ -12,7 +12,7 @@ tra cicli e mesi che in termini di rapporto tra mesi e cicli.
 %Otteniamo la Frequenza di Campionamento che in questo caso indica una
 %registrazione al Mese (singolo campione)
 Fs = 1;
-temperature = co2(:,2);
+temperature = co2(:,2);%togliere
 %Calcolo della FFT
 Y = fft(temperature);
 %Rimozione componente continua, prima di farlo ne effettuo una copia
@@ -22,7 +22,7 @@ Y(1) = [];
 %(ovviamente la fft produce un vettore in uscita che contiene componente
 %reale e immaginaria, la lunghezza di entrambe e' il numero di campioni 
 %ed e la stessa ed e' la lunghezza del vettore)
-n = length(temperature);
+n = length(temperature);%dovrebbe essere lo stesso
 N = length(Y);
 %Ricavo l'ampiezza della trasformata, ricordo che quella in uscita dalla
 %trasformata e' A*(N/2), il calcolo di floor permette di selezionare tutte
